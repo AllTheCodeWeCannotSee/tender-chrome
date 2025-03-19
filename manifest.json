@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Text Rewriter Highlighter",
+  "version": "1.0",
+  "description": "Rewrites and highlights text on web pages.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "type": "module"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "https://api.x.ai/*"
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
